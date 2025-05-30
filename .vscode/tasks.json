@@ -3,8 +3,8 @@
 	"tasks": [
 		{
 			"type": "shell",
-			"label": "Удалить папку server",
-			"command": "Remove-Item -Recurse -Force \"server\"",
+			"label": "Создать public и переместить публичные файлы",
+			"command": "mkdir client/public; move client/icon.png client/public/; move client/manifest.json client/public/; move client/robots.txt client/public/; move client/sitemap.xml client/public/",
 			"group": "build"
 		}
 	]
