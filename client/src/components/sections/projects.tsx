@@ -41,7 +41,7 @@ export default function Projects() {
                 <img 
                   src={project.image} 
                   alt={project.name} 
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-64 object-cover object-top group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
               
