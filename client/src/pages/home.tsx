@@ -23,7 +23,7 @@ export default function Home() {
       <footer className="py-8 px-4 border-t-2 border-accent">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="font-mono text-sm text-muted-foreground mb-4 md:mb-0">
-            © 2024 Ardasher Gainazarov | ZIYO
+            © 2025 Ardasher Gainazarov | ZIYO
           </div>
           
           <div className="font-mono text-sm text-accent">

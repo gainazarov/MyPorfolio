@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gainazarov.com/sitemap.xml

@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
+import emailjs from "@emailjs/browser";
 
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -20,6 +20,10 @@ const contactSchema = z.object({
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
+
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
+const USER_ID = import.meta.env.VITE_EMAILJS_USER_ID as string; // public key
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -39,13 +43,23 @@ export default function Contact() {
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     try {
-      await apiRequest('POST', '/api/contact', data);
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: data.name,
+          from_email: data.email,
+          message: data.message,
+        },
+        USER_ID
+      );
       toast({
         title: "Message sent successfully!",
         description: "I'll get back to you soon.",
       });
       form.reset();
     } catch (error) {
+      console.error("EmailJS error:", error);
       toast({
         title: "Error sending message",
         description: "Please try again later.",
@@ -181,17 +195,17 @@ export default function Contact() {
               <h3 className="font-mono text-xl font-bold text-accent mb-6">{t.contact.findMe}</h3>
               
               <div className="grid grid-cols-2 gap-4">
-                <a href="https://github.com" className="brutalist-btn text-center group">
+                <a href="https://github.com/gainazarov" className="brutalist-btn text-center group">
                   <Github className="w-5 h-5 mx-auto mb-2 group-hover:scale-110 transition-transform" />
                   <span className="font-mono text-xs">GITHUB</span>
                 </a>
                 
-                <a href="https://linkedin.com" className="brutalist-btn text-center group">
+                <a href="https://www.linkedin.com/in/ardasher-gainazarov" className="brutalist-btn text-center group">
                   <Linkedin className="w-5 h-5 mx-auto mb-2 group-hover:scale-110 transition-transform" />
                   <span className="font-mono text-xs">LINKEDIN</span>
                 </a>
                 
-                <a href="https://t.me" className="brutalist-btn text-center group">
+                <a href="https://t.me/gainazarov_a" className="brutalist-btn text-center group">
                   <MessageCircle className="w-5 h-5 mx-auto mb-2 group-hover:scale-110 transition-transform" />
                   <span className="font-mono text-xs">TELEGRAM</span>
                 </a>

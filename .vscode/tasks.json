@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Удалить папку server",
+			"command": "Remove-Item -Recurse -Force \"server\"",
+			"group": "build"
+		}
+	]
+}
