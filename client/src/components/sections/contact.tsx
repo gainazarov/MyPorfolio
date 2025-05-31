@@ -71,10 +71,10 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 bg-primary-dark/20" ref={ref}>
-      <div className="max-w-4xl mx-auto">
+    <section id="contact" className="py-16 sm:py-20 px-2 sm:px-4 bg-primary-dark/20 overflow-x-hidden" ref={ref}>
+      <div className="max-w-4xl mx-auto w-full">
         <motion.h2 
-          className="text-4xl md:text-5xl font-mono font-bold mb-16 text-center"
+          className="text-2xl sm:text-3xl md:text-5xl font-mono font-bold mb-10 sm:mb-16 text-center break-words max-w-full"
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}

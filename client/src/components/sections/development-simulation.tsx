@@ -104,7 +104,7 @@ export default function DevelopmentSimulation() {
     <section ref={ref} className="py-20 px-4 bg-primary-dark/20">
       <div className="max-w-6xl mx-auto">
         <motion.h2 
-          className="text-4xl md:text-5xl font-mono font-bold mb-16 text-center"
+          className="text-2xl sm:text-3xl md:text-5xl font-mono font-bold mb-10 sm:mb-16 text-center break-words max-w-full"
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
