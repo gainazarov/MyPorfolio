@@ -102,7 +102,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h3 className="font-mono text-2xl font-bold text-accent mb-6">{t.about.whoAmI}</h3>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <div className="space-y-4 text-foreground leading-relaxed">
               <p>{t.about.bio1}</p>
               <p>{t.about.bio2}</p>
               <p className="font-mono text-accent italic">"{t.about.motto}"</p>

@@ -6,6 +6,7 @@ export interface Project {
   techStack: string[];
   features: string[];
   role: string;
+  link?: string; // ссылка на проект
 }
 
 export const projects: Project[] = [
@@ -44,7 +45,8 @@ export const projects: Project[] = [
       'Responsive design with mobile-first approach',
       'Feedback forms tied to context (object / apartment)'
     ],
-    role: 'FULL_STACK_DEVELOPER, PRODUCT_MANAGER, DATABASE_ARCHITECT, DEVOPS'
+    role: 'FULL_STACK_DEVELOPER, PRODUCT_MANAGER, DATABASE_ARCHITECT, DEVOPS',
+    link: 'https://tojsokhtmon.tj'
   },
   {
     id: 'salvador-shop',
@@ -77,7 +79,8 @@ export const projects: Project[] = [
       '404 and empty state pages for better UX',
       'Performance-optimized rendering and asset loading'
     ],
-    role: 'FULL_STACK_DEVELOPER, UI_UX_DESIGNER, DATABASE_ARCHITECT, DEVOPS'
+    role: 'FULL_STACK_DEVELOPER, UI_UX_DESIGNER, DATABASE_ARCHITECT, DEVOPS',
+    link: 'https://salvadorishop.ru'
   },
   {
     id: 'wellcom-spb',
@@ -109,9 +112,10 @@ export const projects: Project[] = [
       'Gallery and news modules for content marketing',
       'Email integration for contact and feedback forms'
     ],
-    role: 'FULL_STACK_DEVELOPER, UI_UX_DESIGNER, DATABASE_ARCHITECT, DEVOPS'
+    role: 'FULL_STACK_DEVELOPER, UI_UX_DESIGNER, DATABASE_ARCHITECT, DEVOPS',
+    link: 'https://wellcomspb.ru'
   },
- {
+  {
     id: 'ziyominds',
     name: 'ZIYOMINDS',
     description: 'A next-gen modular learning platform tailored for Central Asia, combining structured roadmaps, real-time mentoring, and multilingual educational content within a scalable digital ecosystem.',
@@ -146,5 +150,44 @@ export const projects: Project[] = [
       'Data analytics for student performance and engagement'
     ],
     role: 'STARTUP_FOUNDER, FULL_STACK_DEVELOPER, UI_UX_DESIGNER, DATABASE_ARCHITECT, DEVOPS'
+  },
+  {
+    id: 'beatflow',
+    name: 'BeatFlow',
+    description: 'Open source next-generation music platform for listening, discovering, and sharing music. Developed solo, but open for contributions and community-driven improvements.',
+    image: '/projects/beaflow.png',
+    techStack: [
+      'React.js',
+      'TypeScript',
+      'Node.js',
+      'Express',
+      'PostgreSQL',
+      'Tailwind CSS',
+      'Framer Motion',
+      'TanStack Query',
+      'JWT',
+      'bcrypt',
+      'Vite',
+      'Wouter'
+    ],
+    features: [
+      'User registration and authentication (JWT, bcrypt, protected API)',
+      'Logout and automatic protection of private routes',
+      'View top tracks of the day (Top Tunes)',
+      'Personalized recommendations (Suggested Songs)',
+      'Personal library, playlists, track upload (for authenticated users)',
+      'Likes, favorites, social features (in progress)',
+      'Search by songs, artists, playlists',
+      'Built-in audio player with progress bar, play/pause, next/prev, volume',
+      'Multilanguage support (EN/TJ/RU)',
+      'Modern UI: gradients, animations, responsive design',
+      'Security: hashed passwords, JWT, private API',
+      'Backend: Node.js + Express, PostgreSQL database',
+      'Clean architecture: client/server/shared separation, extensible',
+      'Detailed logging, error handling, UX-friendly forms',
+      'Open source, MIT license, community contributions welcome'
+    ],
+    role: 'FULL_STACK_DEVELOPER, PRODUCT_OWNER, COMMUNITY_MAINTAINER',
+    link: 'https://github.com/gainazarov/BeatFlow'
   }
 ];
